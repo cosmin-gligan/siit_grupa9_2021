@@ -38,6 +38,15 @@ public class genericsUtils {
         System.out.println(sb);
     }
 
+    public static final <T> void printListOnConsole(List<? extends T> list, String prefix) {
+        StringBuffer sb = new StringBuffer(prefix);
+        for (T element : list) {
+            sb.append("\t\n" + element.toString());
+        }
+        System.out.println(sb);
+    }
+
+
     public static <T extends Object & Comparable<? super T>> T getMaxValueFromList(List<? extends T> list) {
         T maxValue = list.get(0);
         for (T element : list){
